@@ -11,7 +11,7 @@ function App() {
       <div>
         <Switch>
 
-        <Route path="/create">
+        <Route path="/create/wod">
             <CreateWodRoute />
           </Route>
 

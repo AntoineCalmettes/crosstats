@@ -5,7 +5,7 @@ class CreateWod extends Component {
     render() {
         return (
             <div>
-                <p>Je suis le component Create Wod</p>
+              <button type="button" class="btn btn-primary">Component Create Wod</button>
             </div>
         )
 

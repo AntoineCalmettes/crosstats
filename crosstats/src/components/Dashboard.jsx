@@ -5,7 +5,8 @@ class Dashboard extends Component {
     render() {
         return (
             <div>
-                <p>Je suis le component dashboard</p>
+                          <button type="button" class="btn btn-primary">Component Dashboard</button>
+
             </div>
         )
 
