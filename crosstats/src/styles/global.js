@@ -15,6 +15,14 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: medium;
   }
 
+  .bg-primary{
+    background: ${({ theme }) => theme.body};
+  }
+
+  .bg-secondary{
+    background: ${({ theme }) => theme.bodySecondary};
+  }
+
   .text-primary{
     color: ${({ theme }) => theme.textPrimary};
   }
