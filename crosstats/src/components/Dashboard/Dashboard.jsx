@@ -1,16 +1,14 @@
-import React, { Component } from 'react';
+import React, { useState } from "react";
 
-class Dashboard extends Component {
+const Dashboard = props => {
+    //Exemple de hooks pour Antoine car il est nul
+    const [count, setCount] = useState(0);
 
-    render() {
-        return (
-            <div>
-                          <button type="button" class="btn btn-primary">Component Dashboard</button>
-
-            </div>
-        )
-
-    }
-}
+    return (
+        <div>
+            <button type="button" class="btn btn-primary">Dashboard</button>
+        </div>
+    );
+};
 
 export { Dashboard };

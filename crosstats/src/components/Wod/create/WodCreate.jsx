@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React, { useState } from "react";
 
-class WodCreate extends Component {
+const WodCreate = props => {
+    //Exemple de hooks pour Antoine car il est nul
+    const [count, setCount] = useState(0);
 
-    render() {
-        return (
-            <div>
-              <button type="button" class="btn btn-primary">Wod create</button>
-            </div>
-        )
-
-    }
-}
+    return (
+        <div>
+            <button type="button" class="btn btn-primary">Wod Create</button>
+        </div>
+    );
+};
 
 export { WodCreate };

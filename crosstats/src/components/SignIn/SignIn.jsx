@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const SignIn = (props) => (
-    <div>
-        <button type="button" class="btn btn-primary">Component SignIn</button>
-    </div>
-)
+const SignIn = props => {
+    //Exemple de hooks pour Antoine car il est nul
+    const [count, setCount] = useState(0);
+
+    return (
+        <div>
+            <button type="button" class="btn btn-primary">SignIn</button>
+        </div>
+    );
+};
 
 export { SignIn };
