@@ -1,32 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Home, CreateWodRoute } from './routes';
-import { NotFound} from './components/NotFound';
-import {
-  Switch,
-  Route
-} from "react-router-dom";
+import Routes from './routes/index';
+import { Router } from 'react-router-dom';
+import history from './services/historyService';
+
 function App() {
   return (
-  
-      <div>
-        <Switch>
+    <Router history={history}>
+      <Routes />
+    </Router>
+  );
+}
 
-        <Route path="/create/wod">
-            <CreateWodRoute />
-          </Route>
-
-
-          <Route path="/" exact  >
-            <Home />
-          </Route>
-
-          <Route>
-            <NotFound />
-          </Route>
-        </Switch>
-      </div>
-      );
-  }
-  
 export default App;
