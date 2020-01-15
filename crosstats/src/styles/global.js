@@ -11,7 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     font-weight: bold;
   }
 
-  .subTitle{
+  .sub-title{
     font-weight: medium;
   }
 
