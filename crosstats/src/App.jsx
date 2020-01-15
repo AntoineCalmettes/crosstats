@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Home, CreateWodRoute } from './routes';
+import { NotFound} from './components/NotFound';
 import {
   Switch,
   Route
@@ -15,10 +16,14 @@ function App() {
             <CreateWodRoute />
           </Route>
 
-          <Route path="/">
+
+          <Route path="/" exact  >
             <Home />
           </Route>
 
+          <Route>
+            <NotFound />
+          </Route>
         </Switch>
       </div>
       );
