@@ -10,8 +10,8 @@ export const lightTheme = {
 export const darkTheme = {
   bodyPrimary: '#0F1642',
   bodySecondary: '#111A4D',
-  textPrimary: 'rgba(255,255,255,0.8)',
-  textSecondary: 'rgba(255,255,255,0.6)',
+  textPrimary: 'white',
+  textSecondary: 'rgba(255,255,255,0.7)',
   toggleBorder: '#6B8096',
   gradient: 'linear-gradient(#091236, #1E215D)',
 }

@@ -8,27 +8,35 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .title{
-    font-weight: bold;
+    font-weight: bold !important;
   }
 
   .sub-title{
-    font-weight: medium;
+    font-weight: medium !important;
   }
 
   .bg-primary{
-    background: ${({ theme }) => theme.body};
+    background: ${({ theme }) => theme.bodyPrimary} !important;
   }
 
   .bg-secondary{
-    background: ${({ theme }) => theme.bodySecondary};
+    background: ${({ theme }) => theme.bodySecondary} !important;
   }
 
   .text-primary{
-    color: ${({ theme }) => theme.textPrimary};
+    color: ${({ theme }) => theme.textPrimary} !important;
   }
 
   .text-secondary{
-    color: ${({ theme }) => theme.textSecondary};
+    color: ${({ theme }) => theme.textSecondary} !important;
+  }
+
+  .p-32{
+    padding:32px;
+  }
+
+  .p-16{
+    padding:16px;
   }
 
   body {

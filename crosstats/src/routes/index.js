@@ -7,16 +7,16 @@ import { Dashboard } from './Dashboard';
 
 export default function Routes() {
     return (
-        <Switch>
+            <Switch>
 
-            <Route path="/" exact component={SignIn}></Route>
+                <Route path="/" exact component={SignIn}></Route>
 
-            <Route path="/dashboard" component={Dashboard} isPrivate></Route>
+                <Route path="/dashboard" component={Dashboard} isPrivate></Route>
 
-            <Route path="/wod" component={WodRouter} isPrivate></Route>
+                <Route path="/wod" component={WodRouter} isPrivate></Route>
 
-            <Route component={SignIn}></Route>
+                <Route component={SignIn}></Route>
 
-        </Switch>
+            </Switch>
     );
 }
