@@ -12,47 +12,52 @@ import { GOOGLE_CLIENT_ID } from '../../environments/environment';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import AppContext from "../../services/App/appContext";
 
-const SignIn = props => {
+const SignUp = props => {
     const { onUserloged } = useContext(AppContext);
     const { handleSubmit, errors, control } = useForm()
-    const onSubmit = data => { _onLogin(data.email, data.password) }
+    const onSubmit = user => { _onLogin(user) }
     const [isAuthLoading, setAuthLoading] = useState(false);
 
     const responseGoogle = (response) => {
-        const email = response.profileObj ? response.profileObj.email : '';
-        const password = response.profileObj ? response.profileObj.googleId : '';
-        _onLogin(email, password);
+        const fullName = response.profileObj ? `${response.profileObj.givenName} ${response.profileObj.familyName}` : null
+        const email = response.profileObj ? response.profileObj.email : null
+        const password = response.profileObj ? response.profileObj.googleId : null
+        const user = { fullName, email, password };
+        _onLogin(user);
     }
 
-    const _onLogin = async (email, password) => {
-        // console.log(email, password);
-
+    const _onLogin = async (user) => {
+        // console.log(user);
         setAuthLoading(true);
         setTimeout(() => {
             setAuthLoading(false);
-            onUserloged({ email, password });
+            onUserloged(user)
         }, 1500);
     }
-
     return (
         <div className="abstract-bg">
             <h2 className="mb-2 p-32 title">Crosstats</h2>
             <div className="row  h-100">
                 <div className="col-xl-5 ">
                     <div className="p-32">
-                        <h1 className="title mb-3">Bon retour parmis nous</h1>
-                        <h4 className="font-weight-normal mb-4">Connecte-toi pour utiliser Crosstats.</h4>
+                        <h1 className="title mb-3">Commence à utiliser Crosstats gratuitement</h1>
+                        <h4 className="font-weight-normal mb-4">Crée ton compte 100% gratuit afin de profiter du suivie de tes performances sportives et bien plus encore.</h4>
                         <form className="mb-2" onSubmit={handleSubmit(onSubmit)}>
                             <div className="mb-4">
-                                <Controller as={<TextField fullWidth={true} autoFocus={true} id={'email'} label={'Email'} type={'email'} placeholder={'JohnDoe@gmail.com'} required />} name="email" control={control} />
+                                <Controller as={<TextField fullWidth={true} autoFocus={true} id={'fullName'} label={'Nom complet'} type={'text'} placeholder={'John Doe'} required />} name="fullName" control={control} />
+                            </div>
+                            <div className="mb-4">
+                                <Controller as={<TextField fullWidth={true} id={'email'} label={'Email'} type={'email'} placeholder={'JohnDoe@gmail.com'} required />} name="email" control={control} />
                             </div>
                             <div className="mb-2">
                                 <Controller as={<TextField fullWidth={true} id={'password'} label={'Mot de passe'} type={'password'} placeholder={'******'} required />} name="password" control={control} />
                             </div>
                             {errors.exampleRequired && <span>This field is required</span>}
-                            <p className="text-center mb-0"><button type="button" className="btn btn-link" style={{ color: 'white' }}>Mot de passe oublié ?</button> </p>
                             <div className="mb-4">
-                                <Button type="submit" className="w-100" variant="contained" color="primary" disableElevation disabled={isAuthLoading}>{isAuthLoading ? <CircularProgress color="secondary" size={30} /> : "Se connecter"}</Button>
+                                <small className="text-secondary">En m'inscrivant je confirme avoir lu et accepté les Termes & Conditions et Politique de confidentialité de Crosstats. Je confirme avoir au moins 18 ans</small>
+                            </div>
+                            <div className="mb-4">
+                                <Button type="submit" disabled={isAuthLoading} className="w-100" variant="contained" color="primary" disableElevation>{isAuthLoading ? <CircularProgress color="secondary" size={30} /> : "S'inscrire"}</Button>
                             </div>
                         </form>
                         <p className="text-center font-weight-bold">OU</p>
@@ -64,12 +69,12 @@ const SignIn = props => {
                                 onFailure={responseGoogle}
                                 disabled={isAuthLoading}
                                 render={renderProps => (
-                                    <Button onClick={renderProps.onClick} disabled={renderProps.disabled} type="button" variant="outlined" className="outline-btn w-100" startIcon={<GoogleLogo />}> Se connecter avec Google</Button>
+                                    <Button type="button" onClick={renderProps.onClick} disabled={renderProps.disabled} variant="outlined" className="outline-btn w-100" startIcon={<GoogleLogo />}>S'inscrire avec Google</Button>
                                 )}
                                 cookiePolicy={'single_host_origin'}
                             />
                         </div>
-                        <p className="mt-4">Vous n'avez pas de compte ? <Link to="/signUp"><button type="button" className="btn btn-link px-0" style={{ color: 'white', textDecoration: 'underline' }}>S'inscrire</button> </Link></p>
+                        <p className="mt-4">Vous avez déja un compte ? <Link to="/"><button type="button" className="btn btn-link px-0" style={{ color: 'white', textDecoration: 'underline' }}>Se connecter</button> </Link></p>
                     </div>
                 </div>
                 <div className="col-xl-7 abstract d-none d-xl-block">
@@ -79,7 +84,7 @@ const SignIn = props => {
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
-export { SignIn };
+export { SignUp };

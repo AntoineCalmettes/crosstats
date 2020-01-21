@@ -13,7 +13,7 @@ body {
 .abstract-bg {
   height: 100vh;
   overflow: hidden;
-  background-image: url("./assets/signup-dark.png");
+  background-image: url("./assets/images/signup-dark.png");
   background-size: auto;
   background-repeat: no-repeat;
   background-position: right bottom;
@@ -32,6 +32,14 @@ button {
 button:focus {
   outline: none !important;
 }
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {

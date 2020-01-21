@@ -9,22 +9,22 @@ import { GlobalStyles } from './styles/global';
 import { useDarkMode } from './services/themeService';
 import Toggle from './components/shared/Toggle/Toggle'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-function App() {
+import { LoadingScreen } from './components/LoadingScreen/index';
+import { Provider } from "./services/App/provider";
+import AppContext from "./services/App/appContext";
 
+function App() {
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   const MuiTheme = createMuiTheme({
     palette: {
+      type: "dark",
       primary: {
         main: '#4044FF'
       },
-      secondary: {
-        main: '#E33E7F'
-      }
     }
-  },
-  )
+  });
 
   return (
     <Router history={history}>
@@ -32,9 +32,14 @@ function App() {
         <ThemeProvider theme={themeMode}>
           <>
             <GlobalStyles />
-            {/* <Toggle theme={theme} toggleTheme={toggleTheme} /> */}
-
-            <Routes />
+            <Provider>
+              {/* <Toggle theme={theme} toggleTheme={toggleTheme} /> */}
+              <AppContext.Consumer>
+                {context => (
+                  context.data.isAppLoading ? <LoadingScreen /> : <Routes />
+                )}
+              </AppContext.Consumer>
+            </Provider>
           </>
         </ThemeProvider>
       </MuiThemeProvider>

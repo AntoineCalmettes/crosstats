@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect } from 'react-router-dom';
+import AppContext from "../../services/App/appContext";
 
 export default function RouteWrapper({ component: Component, isPrivate, ...rest }) {
+    const { data } = useContext(AppContext);
     // Constante en attendant de faire le système d'authentification
-    const signed = false;
+    const signed = data.user;
 
     /**    
     * Redirige l'utilisateur vers la route /SignIn si n'est pas authentifier 
