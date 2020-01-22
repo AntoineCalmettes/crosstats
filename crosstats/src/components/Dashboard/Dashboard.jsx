@@ -5,33 +5,34 @@ import './Dashboard.css';
 
 const Dashboard = props => {
     const { toggleAppLoading } = useContext(AppContext);
-    const events = new Array(30)
+    const events = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
     // toggleAppLoading(true);
     return (
-        // style={{ overflowY: 'scroll' }} className="metrics hide-scrollbar"
-        <section className="p-32 pr-0 row m-0" style={{ overflow: 'hidden', height: '100vh' }}>
-            {/* style={{ overflow: 'scroll', height: 'calc(100vh - 32px)' }} */}
-            <article className="metrics col-md-8 hide-scrollbar" >
-                <Card style={{ height: 400 }} component={<h3>Performances 0</h3>} />
+        <section className="app-container pr-0 row position-relative">
+            <article className="metrics hide-scrollbar p-32" style={{ overflowY: 'Scroll' }}>
+                <h1 className="title h2" style={{ marginBottom: 32 }}>Tableau de bord</h1>
+                <Card style={{ height: 400 }} component={<h2>Performances 0</h2>} />
                 <div className="row p-32 px-0">
-                    <div className="col-md-5">
-                        <Card style={{ height: 200, marginBottom: 16 }} component={<h3>Performances 1</h3>} />
-                        <Card style={{ height: 200 }} component={<h3>Performances 2</h3>} />
+                    <div className="col-lg-6">
+                        <Card style={{ height: 200, marginBottom: 16 }} component={<h2>Performances 1</h2>} />
+                        <Card style={{ height: 200 }} component={<h2>Performances 2</h2>} />
                     </div>
-                    <div className="col-md-7">
-                        <Card style={{ height: 416 }} component={<h3>Performances 3</h3>} />
+                    <div className="col-lg-6">
+                        <Card style={{ height: 416 }} component={<h2>Performances 3</h2>} />
+                    </div>
+                    <div className="col-12" style={{ paddingTop: 32 }}>
+                        <Card style={{ height: 200, marginBottom: 16 }} component={<h2>Performances 1</h2>} />
                     </div>
                 </div>
             </article>
 
-            <aside className="calendar col-md-4 p-0">
+            <aside className="right-section">
+                <div style={{ height: 102 }}></div>
                 <Card style={{ borderTopRightRadius: 0, borderBottomLeftRadius: 0 }} component={
                     <div>
-                        <h4>
-                            Calendriers
-            </h4>
-                        <div className="hide-scrollbar" style={{ overflowY: 'Scroll', height: 30 * 10 }}>
-                            {events.map(() => { return (<h3>Calendriers</h3>) })}
+                        <h2>Calendriers</h2>
+                        <div className="hide-scrollbar" style={{ overflowY: 'Scroll', height: 25.5 * events.length }}>
+                            {events.map((a) => <h3>Item {a}</h3>)}
                         </div>
                     </div>
                 } />

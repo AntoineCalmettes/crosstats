@@ -1,8 +1,13 @@
 .metrics {
-  /* width: 70vw; */
+  width: calc(70vw - 64px);
+   height: calc(100vh);
+  position: fixed;
 }
 
-.calendar {
-  /* width: calc(30vw - 64px);
-  height: calc(100vh - 32px); */
+.right-section {
+  width: calc(30vw - 64px);
+  height: calc(100vh);
+  position: fixed;
+  top:0;
+  right: 0;
 }

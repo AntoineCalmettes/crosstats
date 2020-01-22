@@ -5,6 +5,7 @@ export const lightTheme = {
   textSecondary: 'rgba(0,0,0,0.6)',
   toggleBorder: '#FFF',
   gradient: 'linear-gradient(#39598A, #79D7ED)',
+  primaryColor: '#4044FF'
 }
 
 export const darkTheme = {
@@ -14,4 +15,5 @@ export const darkTheme = {
   textSecondary: 'rgba(255,255,255,0.7)',
   toggleBorder: '#6B8096',
   gradient: 'linear-gradient(#091236, #1E215D)',
+  primaryColor: '#4044FF'
 }

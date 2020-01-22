@@ -1,4 +1,14 @@
-.nav-bar-side {
-  width: 180px;
+.navbar-side {
+  width: 100px;
   height: 100vh;
+  position: fixed;
+  z-index: 1;
+  border-right: solid 1px rgba(255, 255, 255, 0.05);
+}
+.nav-item {
+  margin: 16px 0 !important;
+}
+
+.nav-item.active .nav-btn {
+  background-color: rgba(0, 0, 0, 0.3) !important;
 }

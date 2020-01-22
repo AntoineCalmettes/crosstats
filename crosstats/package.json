@@ -14,6 +14,7 @@
     "axios": "^0.19.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.12.0",
     "react-google-login": "^5.0.7",
     "react-history": "^0.18.2",

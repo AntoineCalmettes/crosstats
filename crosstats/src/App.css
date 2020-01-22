@@ -40,6 +40,9 @@ button:focus {
   display: none;
 }
 
+.app-container {
+  margin-left: 100px;
+}
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {

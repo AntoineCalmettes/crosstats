@@ -9,17 +9,18 @@ export default function RouteWrapper({ component: Component, isPrivate, ...rest 
     const signed = data.user;
 
     /**    
-    * Redirige l'utilisateur vers la route /SignIn si n'est pas authentifier 
+    * Redirige l'utilisateur vers la route / si n'est pas authentifier 
     */
+    console.log(rest);
     if (isPrivate && !signed) {
         return <Redirect to="/" />;
     }
 
     /**    
-    * Redirige l'utilisateur vers la route /Home si est authentifier  
+    * Redirige l'utilisateur vers la route /app si est authentifier  
     */
     if (!isPrivate && signed) {
-        return <Redirect to="/dashboard" />;
+        return <Redirect to="/app/dashboard" />;
     }
 
     /**    
