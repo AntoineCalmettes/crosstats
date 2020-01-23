@@ -5,6 +5,28 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.my-32 {
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.px-32 {
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.p-32 {
+  padding: 32px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
 /* .abstract {
   transform-origin: 100%;
   transform: rotate(-45deg) translateX(20%)
@@ -44,11 +66,57 @@ button:focus {
   margin-left: 100px;
 }
 
+.rounded-square-60 {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.rounded-square-86 {
+  width: 86px;
+  height: 86px;
+  border-radius: 15px;
+}
+
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (max-width: 1200px) {
   .abstract-bg {
     background-image: none;
     height: 100vh;
     overflow-y: scroll;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .app-container {
+    margin-left: 0px;
+  }
+
+  .mb-32 {
+    margin-bottom: 16px;
+  }
+
+  .my-32 {
+    margin-bottom: 16px;
+    margin-top: 16px;
+  }
+
+  .p-32 {
+    padding: 16px;
+  }
+
+  .p-16 {
+    padding: 8px;
+  }
+
+  .px-32 {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .rounded-square-86 {
+    width: 102px;
+    height: 102px;
   }
 }

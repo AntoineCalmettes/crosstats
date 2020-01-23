@@ -1,13 +1,32 @@
 .metrics {
-  width: calc(70vw - 64px);
-   height: calc(100vh);
+  width: calc(70vw - 100px);
+  height: calc(100vh);
   position: fixed;
 }
 
 .right-section {
-  width: calc(30vw - 64px);
+  width: calc(30vw);
   height: calc(100vh);
   position: fixed;
-  top:0;
+  top: 109px;
   right: 0;
+}
+
+.chart-div {
+  width: 100%;
+  height: calc(100% - 64px);
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .right-section {
+    display: none !important;
+  }
+  .metrics {
+    width: calc(100vw);
+  }
+  .chart-div {
+    width: 100%;
+    height: calc(100% - 96px);
+  }
 }

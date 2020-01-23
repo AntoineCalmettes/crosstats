@@ -12,3 +12,10 @@
 .nav-item.active .nav-btn {
   background-color: rgba(0, 0, 0, 0.3) !important;
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .navbar-side {
+    display: none !important;
+  }
+}

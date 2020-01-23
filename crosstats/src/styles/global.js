@@ -31,14 +31,6 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.textSecondary} !important;
   }
 
-  .p-32{
-    padding:32px;
-  }
-
-  .p-16{
-    padding:16px;
-  }
-
   body {
     background: ${({ theme }) => theme.bodySecondary};
     color: ${({ theme }) => theme.textPrimary};
