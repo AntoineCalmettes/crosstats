@@ -147,7 +147,7 @@ const Dashboard = props => {
             <article className="metrics hide-scrollbar p-32 pb-0" style={{ overflowY: 'Scroll' }}>
                 <TopBar title={'Tableau de bord'} button={<Button type="button" variant="contained" color="primary" disableElevation startIcon={<AddRoundedIcon />}>Nouveau wod</Button>} />
                 <Card style={{ height: 400 }} component={<div className="h-100">
-                    <h2 className="h4 title">Seances de Crossfit</h2>
+                    <h2 className="h4 title">Votre activités</h2>
                     <h3 className="h6 font-weight-normal mb-4">6 derniers mois</h3>
                     <div className="chart-div">
                         <Line data={lineChart} options={lineChartOptions} />

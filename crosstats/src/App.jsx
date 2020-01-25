@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import Routes from './routes/index';
 import { Router } from 'react-router-dom';
@@ -9,7 +9,6 @@ import { GlobalStyles } from './styles/global';
 import { useDarkMode } from './services/themeService';
 import Toggle from './components/shared/Toggle/Toggle'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { LoadingScreen } from './components/LoadingScreen/index';
 import { Provider } from "./services/App/provider";
 import AppContext from "./services/App/appContext";
 
@@ -25,26 +24,26 @@ function App() {
       },
     }
   });
-
+  
   return (
     <Router history={history}>
-      <MuiThemeProvider theme={MuiTheme}>
-        <ThemeProvider theme={themeMode}>
-          <>
-            <GlobalStyles />
-            <Provider>
-              {/* <Toggle theme={theme} toggleTheme={toggleTheme} /> */}
-              <AppContext.Consumer>
-                {context => (
-                  context.data.isAppLoading ? <LoadingScreen /> : <Routes />
-                )}
-              </AppContext.Consumer>
-            </Provider>
-          </>
-        </ThemeProvider>
+    <MuiThemeProvider theme={MuiTheme}>
+    <ThemeProvider theme={themeMode}>
+    <>
+    <GlobalStyles />
+    <Provider>
+    {/* <Toggle theme={theme} toggleTheme={toggleTheme} /> */}
+    <AppContext.Consumer>
+    {context => (
+      <Routes />
+      )}
+      </AppContext.Consumer>
+      </Provider>
+      </>
+      </ThemeProvider>
       </MuiThemeProvider>
-    </Router>
-  );
-}
-
-export default App;
+      </Router>
+      );
+    }
+    
+    export default App;

@@ -10,7 +10,7 @@ export default function AuthRouter() {
         <Router history={history}>
             <Switch>
                 <Route path="/" exact component={SignIn} />
-                <Route path="/signUp" component={SignUp} />
+                <Route path="/signup" component={SignUp} />
                 <Route path="**" component={SignIn} />
             </Switch>
         </Router>

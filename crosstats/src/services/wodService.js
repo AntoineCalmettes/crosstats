@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Modifier par l'url ton api
-const BASE_URL = 'https://www.coorty.fr/'
+const BASE_URL = 'http://127.0.0.1:8000/'
 
 /**    
 * Récupére la liste de tout les wods

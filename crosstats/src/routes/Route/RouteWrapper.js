@@ -7,11 +7,9 @@ export default function RouteWrapper({ component: Component, isPrivate, ...rest 
     const { data } = useContext(AppContext);
     // Constante en attendant de faire le système d'authentification
     const signed = data.user;
-
     /**    
     * Redirige l'utilisateur vers la route / si n'est pas authentifier 
     */
-    console.log(rest);
     if (isPrivate && !signed) {
         return <Redirect to="/" />;
     }
