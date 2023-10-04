@@ -1,3 +1,3 @@
 # crosstats
 
-Author by Antoine Calmettes & Julien Trembley
+Author by Antoine Calmettes 
